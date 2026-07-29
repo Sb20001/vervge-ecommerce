@@ -9,13 +9,6 @@ dashboard for managing products and orders.
 **Frontend:** React.js, Vite, Redux Toolkit, Tailwind CSS, React Router, Axios
 **Backend:** Node.js, Express, JWT authentication, bcrypt password hashing
 
-> **A note on the backend datastore:** your resume lists Spring Boot + MongoDB + Redis +
-> Cloudinary. This sandbox environment can't run a standalone Java/Maven toolchain or spin
-> up MongoDB/Redis server processes, so the backend here is Express with the **same REST
-> API shape and JWT auth design**, backed by an embedded JSON file database (via `lowdb`)
-> instead of MongoDB. Everything — auth, product CRUD, cart, checkout, orders, admin — is
-> fully functional end to end. See "Upgrading to MongoDB + Redis" below for how to swap
-> the datastore back in for a production deployment that matches your resume exactly.
 
 ## Project structure
 
