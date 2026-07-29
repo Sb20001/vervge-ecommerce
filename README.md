@@ -1,14 +1,13 @@
 # Verve — Full-Stack Ecommerce Platform
 
-A complete, working implementation of the Ecommerce Platform project from your resume:
-customer storefront, cart, checkout, order history, JWT authentication, and an admin
-dashboard for managing products and orders.
+A complete, production-style ecommerce platform featuring a customer storefront, shopping
+cart, checkout flow, order history, JWT authentication, and an admin dashboard for managing
+products and orders.
 
 ## Stack
 
 **Frontend:** React.js, Vite, Redux Toolkit, Tailwind CSS, React Router, Axios
 **Backend:** Node.js, Express, JWT authentication, bcrypt password hashing
-
 
 ## Project structure
 
@@ -21,7 +20,7 @@ ecommerce-project/
 │   │   ├── db.js      lowdb JSON datastore
 │   │   ├── seed.js    seeds demo products + admin account
 │   │   └── server.js
-│   └── data/db.json   the "database" file (created on first run)
+│   └── data/db.json   the database file (created on first run)
 └── frontend/           React app
     └── src/
         ├── app/store.js          Redux store
@@ -95,23 +94,11 @@ Open **http://localhost:5173**.
 | GET | `/orders` | admin |
 | PUT | `/orders/:id/status` | admin |
 
-## Upgrading to MongoDB + Redis (matching your resume's stack exactly)
+## Roadmap
 
-The API layer is already structured so this is a swap, not a rewrite:
-
-1. **MongoDB:** replace `backend/src/db.js` with a Mongoose connection, and turn
-   `db.data.products` / `.users` / `.orders` into Mongoose models (`Product`, `User`,
-   `Order`). The route handlers in `routes/*.js` only touch `db.data.<collection>` as
-   arrays — swap those lines for `Model.find()`, `Model.create()`, etc.
-2. **Redis:** add `ioredis`, and in `middleware/auth.js` cache verified JWT payloads (or
-   session/cart state) with a TTL, invalidating on logout.
-3. **Cloudinary:** add the `cloudinary` SDK, accept `multipart/form-data` uploads on
-   `POST /products` via `multer`, and store the returned secure URL in the `image` field
-   (already a plain string field, so no schema change needed).
-4. **Spring Boot:** if you want the backend itself in Java to match the resume word-for-
-   word, the REST contract above (routes, request/response shapes, JWT claims) is the
-   spec to re-implement — the frontend won't need to change at all since it only talks to
-   `/api/*`.
+- **MongoDB:** swap the JSON datastore for Mongoose models.
+- **Redis:** cache verified JWT payloads / session state with a TTL.
+- **Cloudinary:** accept image uploads and store secure URLs on products.
 
 ## Environment variables
 
