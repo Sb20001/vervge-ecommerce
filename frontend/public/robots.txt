@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vervge-ecommerce.vercel.app/sitemap.xml
