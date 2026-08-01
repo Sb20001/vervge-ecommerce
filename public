@@ -1,0 +1,2 @@
+Step 2: Add it to your project's public folder
+This is the key part — the file needs to be accessible at the root of your live site (e.g. https://vervge-ecommerce.vercel.app/google1234567890abcdef.html).
